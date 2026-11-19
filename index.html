@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; media-src 'self'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#2E8B76">
+<link rel="manifest" href="manifest.webmanifest">
+<title>介護日本語 N3相当 会話能力判定 / Care Japanese N3 Placement Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2B2926;--cream:#EFEAE0;--cream-deep:#E4DECE;--stone:#C9C2B4;--stone-line:#DDD6C6}
+.theme-exam{--accent-fill:#2E8B76;--accent-text:#1F6355}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 "Zen Kaku Gothic New",sans-serif}
+h1,h2,h3,.num{font-family:"Shippori Mincho",serif;margin:0}
+h2{font-size:1.2rem;margin-bottom:8px}h3{font-size:1.02rem;margin-bottom:4px}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+header{padding:8px 0 14px;border-bottom:2px solid var(--accent-fill);margin-bottom:16px}
+header h1{font-size:1.3rem;line-height:1.4}.brand{font-size:.8rem;color:var(--accent-text);font-weight:700}
+.card{border:1px solid var(--stone-line);border-radius:10px;padding:18px;margin-bottom:16px}
+.inner{background:var(--cream-deep);border-radius:8px;padding:12px 14px;margin:12px 0}
+.ja{display:block}.en{display:block;font-size:.86em;opacity:.78}
+.chip{display:inline-block;border:1px solid var(--accent-fill);color:var(--accent-text);border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:700;margin-bottom:8px}
+.lv{display:inline-block;border:2px solid var(--stone);border-radius:6px;padding:0 8px;font-size:.82rem;font-weight:700;white-space:nowrap}
+.lv.l2{border-color:var(--accent-fill);color:var(--accent-text)}.lv.l0{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 20px;font:700 1.02rem "Zen Kaku Gothic New",sans-serif;border-radius:8px;cursor:pointer;border:2px solid var(--accent-fill);text-align:center}
+.btn.p{background:var(--accent-fill);color:var(--cream)}.btn.g{background:transparent;color:var(--accent-text)}.btn.w{width:100%}
+.btn:disabled{background:var(--stone);border-color:var(--stone);color:var(--ink);opacity:.7;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--accent-text);outline-offset:2px}
+.bar{height:10px;background:var(--stone);border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent-fill)}
+label{font-weight:700;font-size:.92rem}
+input[type=text],textarea{width:100%;min-height:44px;padding:8px 10px;border:1px solid var(--stone);border-radius:6px;background:#fff9;color:var(--ink);font:inherit}
+textarea{min-height:120px;resize:vertical}
+.note{border-left:4px solid var(--accent-fill);background:var(--cream-deep);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.9rem;margin:12px 0}
+.err{font-weight:700;border:2px solid var(--ink);border-radius:6px;padding:8px 12px;margin:8px 0}
+.top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.top .num{font-weight:700;color:var(--accent-text);white-space:nowrap}
+.ap{text-align:center;border:2px dashed var(--accent-fill);border-radius:10px;padding:16px;margin:12px 0}.as{font-size:.88rem;margin-top:6px;min-height:1.5em}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt{text-align:left;min-height:56px;padding:10px 14px;border:2px solid var(--stone-line);border-radius:10px;background:var(--cream-deep);color:var(--ink);font:inherit;cursor:pointer}.opt.sel{border-color:var(--accent-fill)}
+.sr{margin-bottom:14px}.sh{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:4px}
+.ad{border-left:4px solid var(--accent-fill);background:var(--cream-deep);padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:10px}
+.ad.s{border-left-color:var(--ink)}
+.rv{border:1px solid var(--stone-line);border-radius:8px;padding:10px 12px;margin-bottom:8px;font-size:.9rem}
+details{margin:8px 0}summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+ul,ol{margin:6px 0 6px 20px;padding:0}.meta{font-size:.88rem}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1 1 150px}
+@media print{body{background:#fff}.np{display:none!important}.card{border:0;padding:0}.ad,.inner{break-inside:avoid}}
+</style>
+</head>
+<body class="theme-exam">
+<div class="wrap">
+<header><div class="brand">Yoshida EdTech Works</div>
+<h1>N3相当 会話能力判定<span class="en" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:400">Care Japanese: N3-level Placement Check</span></h1>
+<div class="en">介護特化・入国時の判定 / For care work, at arrival in Japan</div></header>
+
+<section id="s-start" class="card">
+ <span class="chip">全10問・約15分 / 10 tasks · about 15 min</span>
+ <h2>このテストでわかること<span class="en">What this test shows</span></h2>
+ <p><span class="ja">知識ではなく、介護の現場で日本語を使って動けるかを見ます。「聞く」「話す」「書く」の3つで、実践に即応できるかと、足りないところを確認します。</span><span class="en">This checks whether you can act in Japanese on the care floor, not just what you know. Listening, speaking and writing show if you are ready, and what is missing.</span></p>
+ <ul><li><span class="ja">聞く：指示・擬音語・安全の指示（4問・レベルに合わせて出題）</span><span class="en">Listening: instructions, sound-words, safety (4 items, adapts to your level)</span></li>
+ <li><span class="ja">話す：声かけ・報連相・家族への説明・緊急連絡（4問）</span><span class="en">Speaking: talking to residents, reporting, family, emergencies (4 items)</span></li>
+ <li><span class="ja">書く：介護記録・事故報告（2問）</span><span class="en">Writing: care record and incident report (2 items)</span></li></ul>
+ <div class="note"><span class="ja">結果は簡易な目安です。正式な判定ではなく、管理者が確認して使います。</span><span class="en">Results are a rough guide, not an official judgment. An administrator reviews them.</span></div>
+ <label for="pid">受験者ID・ニックネーム / Test taker ID or nickname</label>
+ <input type="text" id="pid" maxlength="30" autocomplete="off">
+ <div class="inner"><button type="button" class="btn g" id="snd"><span>🔊 音を確認する / Sound check</span></button>
+  <div class="en" id="vw" hidden style="opacity:1;font-weight:700"><span class="ja">この端末に日本語音声がありません。別の端末を使ってください。</span>No Japanese voice on this device. Please use another device.</div>
+  <div class="en" id="mw" hidden style="opacity:1"><span class="ja">この端末は音声入力に対応していません。「話す」は文字で入力します。</span>Voice input is not supported here. Type your answers in the speaking tasks.</div></div>
+ <div class="note"><span class="ja">回答はこの端末で処理します。AI判定が使える環境では、回答の文章だけを判定のために送信します。</span><span class="en">Answers are processed on this device. Where AI judging is enabled, only your answer text is sent for judging.</span></div>
+ <button type="button" class="btn p w" id="go"><span><span class="ja">テストを始める</span><span class="en">Start the test</span></span></button>
+</section>
+
+<section id="s-quiz" class="card" hidden>
+ <div class="top"><div class="chip" id="qb"></div><div class="num" id="qn"></div></div>
+ <div class="bar" role="progressbar"><i id="pf"></i></div>
+ <h2 id="qt" style="margin-top:14px"></h2>
+ <div class="inner" id="qc"></div>
+ <div class="ap" id="ap"><button type="button" class="btn p" id="pl"><span><span class="ja">🔊 先輩の話を聞く</span><span class="en">Play the senior's words</span></span></button><div class="as" id="as" role="status" aria-live="polite"></div></div>
+ <div class="opts" id="uc" hidden></div>
+ <div id="ut" hidden>
+  <button type="button" class="btn g" id="mic"><span>🎤 話して入力 / Speak</span></button>
+  <div class="as" id="ms" role="status" aria-live="polite"></div>
+  <label for="ta" class="np"><span class="ja">回答（直してもOK）</span><span class="en">Your answer (you can edit)</span></label>
+  <textarea id="ta" maxlength="400"></textarea>
+ </div>
+ <button type="button" class="btn p w" id="nx" disabled style="margin-top:12px"><span><span class="ja">回答する</span><span class="en">Submit answer</span></span></button>
+</section>
+
+<section id="s-result" class="card" hidden>
+ <span class="chip">判定結果 / Result</span>
+ <h2 id="rv0"></h2>
+ <div class="meta inner" id="rm"></div>
+ <div id="rb"></div>
+ <div id="rf"></div>
+ <h2 style="margin-top:20px">受入施設の伴走指示書<span class="en">Coaching sheet for the receiving facility</span></h2>
+ <div id="ri"></div>
+ <details class="np"><summary>課題ごとの結果 / Task details</summary><div id="rd"></div></details>
+ <div class="acts np">
+  <button type="button" class="btn p" id="xs"><span>管理者へ送信</span></button>
+  <button type="button" class="btn p" id="xj"><span>JSON</span></button>
+  <button type="button" class="btn p" id="xc"><span>CSV</span></button>
+  <button type="button" class="btn g" id="xp"><span>印刷 / PDF</span></button>
+  <button type="button" class="btn g" id="xr"><span>もう一度</span></button>
+ </div>
+ <div class="as np" id="xm" role="status" aria-live="polite"></div>
+ <div class="note"><span class="ja">簡易な目安です。管理者が内容を確認し、採用・評価の唯一の根拠にはしないでください。</span><span class="en">A rough guide. An administrator should review it; do not use it as the sole basis for hiring or evaluation.</span></div>
+</section>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const bi=(j,e)=>`<span class="ja">${j}</span><span class="en" lang="en">${e}</span>`;
+const shuf=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
+const DOM={L:['聞く','Listening'],S:['話す','Speaking'],W:['書く','Writing']};
+const LV=[['要補強','Needs work'],['あと一歩','Almost'],['達成','Achieved']];
+
+/* 聴解プール（d=難易度1-3, s=安全, mp3=任意の音声ファイル） */
+const LP=[
+{d:1,c:['【場面】午後、利用者さんが汗をたくさんかいています。','Scene: A resident is sweating a lot in the afternoon.'],a:['汗をかいているので、着替えを手伝ってあげてね。','She is sweating, so please help her change clothes.'],o:[['着替えを手伝う','Help her change clothes'],['水を飲ませる','Give her water'],['体温を測る','Take her temperature'],['窓を閉める','Close the window']],k:0},
+{d:1,c:['【場面】食堂で、利用者さんが立ち上がりました。','Scene: In the dining hall, a resident stands up.'],a:['トイレに行きたいそうです。付き添ってください。','She wants to go to the toilet. Please go with her.'],o:[['トイレに付き添う','Go with her to the toilet'],['食事を片付ける','Clear the meal'],['車椅子で散歩に行く','Go for a walk in the wheelchair'],['看護師を呼ぶ','Call the nurse']],k:0},
+{d:2,c:['【場面】昼食の介助中です。','Scene: Helping a resident eat lunch.'],a:['ご飯、ゆっくりモグモグ食べてもらってね。急がせないでね。','Let her eat slowly and chew well. Do not rush her.'],o:[['よく噛んで、ゆっくり食べてもらう','Let her chew well and eat slowly'],['早く食べ終わるよう声をかける','Urge her to finish quickly'],['食事を細かく刻む','Cut the food finely'],['食事を下げる','Take the meal away']],k:0},
+{d:2,s:1,c:['【場面】廊下の床が濡れています。','Scene: The corridor floor is wet.'],h:['問い：最初にすることは？','Question: What do you do first?'],a:['廊下が濡れているよ。看板を置いてから、モップで拭いてね。','The corridor is wet. Put out a sign, and then mop it.'],o:[['注意の看板を置く','Put out a caution sign'],['モップで拭く','Mop the floor'],['先輩を呼ぶ','Call a senior'],['利用者を部屋に戻す','Take residents back to their rooms']],k:0},
+{d:3,s:1,c:['【場面】先輩から、田中さんの様子について頼まれました。','Scene: A senior asks you about Tanaka-san.'],h:['問い：顔色が悪くなったら、どうしますか？','Question: What do you do if her face turns pale?'],a:['田中さんが、さっきから胸が苦しいって言ってるの。様子を見ていて。もし顔色が悪くなったら、すぐ看護師さんを呼んでね。','Tanaka-san has said her chest feels tight for a while. Keep watching her. If her face turns pale, call the nurse right away.'],o:[['すぐ看護師を呼ぶ','Call the nurse right away'],['水を飲ませて休ませる','Give water and let her rest'],['10分待ってから報告する','Wait 10 minutes, then report'],['家族に電話する','Phone the family']],k:0},
+{d:3,s:1,c:['【場面】夕方、高橋さんについての指示です。','Scene: Instructions about Takahashi-san in the evening.'],h:['問い：熱が上がったら、最初にすることは？','Question: If her fever goes up, what do you do first?'],a:['もし高橋さんの熱が上がったら、先に看護師さんに連絡して。そのあと、ご家族にも知らせてね。','If Takahashi-san\'s fever goes up, contact the nurse first. Then let the family know, too.'],o:[['看護師に連絡する','Contact the nurse'],['家族に知らせる','Tell the family'],['体を冷やして様子を見る','Cool her and watch'],['記録に書く','Write it in the record']],k:0}
+];
+/* 話す・書く課題（R=採点要素。re=含まれるべき表現） */
+const POL={l:['丁寧な言い方','Polite form'],re:'です|ます|ください|ましょう',t:['利用者・先輩には「です・ます」で話す。先輩が手本を見せる。','Use polite form with residents and seniors; seniors model it.']};
+const T=[
+{id:'S1',dom:'S',c:['【場面】田中さんをベッドから車椅子に移します。','Scene: You will move Tanaka-san from the bed to the wheelchair.'],p:['田中さんに、声をかけてください。','Speak to Tanaka-san.'],
+ R:[{l:['名前で呼びかける','Call her by name'],re:'田中',t:['最初に「田中さん」と名前を呼んでから話し始める習慣をつける。','Start by calling the resident by name.']},
+ {l:['これからすることを説明','Explain what will happen'],re:'車椅子|移|座',t:['動作の前に「車椅子に移ります」と、短く説明する練習をする。','Practise saying briefly what will happen before moving.']},
+ {l:['同意・確認を取る','Ask for consent'],re:'いいですか|よろしいですか|お願い|ましょうか',t:['「いいですか」と確認してから動く。','Check ("Is it OK?") before moving.']},POL]},
+{id:'S2',dom:'S',c:['【場面】山田さんが、朝食を半分しか食べませんでした。','Scene: Yamada-san ate only half of her breakfast.'],p:['先輩に報告してください。','Report to your senior.'],
+ R:[{l:['誰のことか','Who'],re:'山田',t:['報告は「誰が」から始める。','Start a report with who.']},
+ {l:['事実（半分）','Fact: half'],re:'半分|残',t:['「半分しか食べませんでした」のように、事実を数量で言う。','State facts with amounts.']},
+ {l:['いつか','When'],re:'朝|今|さっき|先ほど',t:['「朝食で」「先ほど」と時間を入れる。','Include the time.']},
+ {l:['次の指示を聞く','Ask what to do next'],re:'どう|ましょうか|ですか|確認|様子',t:['最後に「どうしましょうか」と指示を仰ぐ。','End with "What should I do?"']},POL]},
+{id:'S3',dom:'S',c:['【場面】伊藤さんは今日、少し熱があって、入浴をやめました。','Scene: Ito-san had a slight fever today and the bath was cancelled.'],p:['ご家族に電話で説明してください。','Explain it to the family by phone.'],
+ R:[{l:['名乗る','Introduce yourself'],re:'介護|施設|申します|お世話|ホーム',t:['電話の最初に施設名と名前を言う。','Start calls with the facility name and your name.']},
+ {l:['熱があること','The fever'],re:'熱',t:['理由（熱）をはっきり伝える。','State the reason (fever) clearly.']},
+ {l:['入浴をやめたこと','The bath was cancelled'],re:'入浴|お風呂|やめ|控え|中止',t:['何をしたか（入浴をやめた）を伝える。','Say what was done (bath cancelled).']},
+ {l:['今後の対応','Next steps'],re:'様子|看護師|また|後ほど|連絡',t:['今後（様子を見る・連絡する）を伝えて、家族を安心させる。','Say what happens next so the family feels at ease.']},POL]},
+{id:'S4',dom:'S',s:1,c:['【場面】廊下で、佐藤さんが転びました。意識はあります。','Scene: Sato-san fell in the corridor. She is conscious.'],p:['ナースステーションに電話で連絡してください。','Call the nurse station.'],
+ R:[{l:['場所','Place'],re:'廊下',t:['緊急連絡は、最初に「どこで」を言う。','In an emergency, say where first.']},
+ {l:['誰が・何が起きたか','Who and what'],re:'佐藤|転',t:['「佐藤さんが転びました」と、誰に何が起きたかを言う。','Say who it is and what happened.']},
+ {l:['意識・けがの状態','Condition'],re:'意識|痛|けが|怪我|出血',t:['意識・痛み・けがの有無を伝える。','Report consciousness, pain and injury.']},
+ {l:['来てほしいと頼む','Ask for help'],re:'来て|お願い|すぐ|急|ください',t:['最後に「すぐ来てください」と、はっきり頼む。','End with a clear request: "Please come now."']}]},
+{id:'W1',dom:'W',c:['【状況】今日の昼食で、山田さんは主食を半分、おかずを全部食べた。水分は200ml飲んだ。','Situation: At lunch today, Yamada-san ate half of the rice and all of the side dishes. She drank 200 ml of fluid.'],p:['食事の記録を、2〜3文で書いてください。','Write the meal record in 2–3 sentences.'],
+ R:[{l:['昼食であること','Lunch'],re:'昼',t:['記録には、いつの食事かを書く。','State which meal it was.']},
+ {l:['食事量','Amount eaten'],re:'半分|全部|全量|主食|おかず',t:['主食・おかずの量を、数量の言葉で書く。','Write amounts for rice and side dishes.']},
+ {l:['水分量','Fluid'],re:'水分|200|ml|ミリ|ｍｌ',t:['水分量（ml）を必ず書く。','Always write the fluid amount (ml).']}]},
+{id:'W2',dom:'W',s:1,c:['【状況】15時、廊下で佐藤さんが転倒した。膝に擦り傷があった。意識はあった。看護師が処置した。','Situation: At 3 p.m., Sato-san fell in the corridor. She had a scraped knee and was conscious. The nurse treated it.'],p:['事故の報告を書いてください。','Write the incident report.'],
+ R:[{l:['時間','Time'],re:'15時|３時|午後',t:['事故報告は、必ず時間を書く。','Always write the time in an incident report.']},
+ {l:['場所','Place'],re:'廊下',t:['場所を具体的に書く。','Write the place specifically.']},
+ {l:['何が起きたか','What happened'],re:'転倒|転ん|転び',t:['「転倒した」と、事実を短く書く。','State the fact briefly: "fell".']},
+ {l:['けがの状態','Injury'],re:'擦り傷|すり傷|膝|ひざ',t:['けがの場所と状態を書く。','Write where the injury is and its state.']},
+ {l:['対応','Response'],re:'看護師|処置',t:['誰が何をしたか（対応）を書く。','Write who did what in response.']}]}
+];
+
+const hasSp='speechSynthesis' in window;
+const jv=()=>hasSp?speechSynthesis.getVoices().find(v=>/^ja/i.test(v.lang.replace('_','-'))):null;
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+let S,AC,rec=null;
+const actx=()=>{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC};
+function beep(){try{const c=actx(),o=c.createOscillator(),g=c.createGain();o.frequency.value=437;g.gain.setValueAtTime(.08,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.18);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.2)}catch(e){}}
+function say(t,end){if(!hasSp){end();return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=1;const v=jv();if(v)u.voice=v;let f=false,w;const fin=()=>{if(f)return;f=true;clearTimeout(w);end()};w=setTimeout(fin,Math.max(4000,t.length*450));u.onend=u.onerror=fin;speechSynthesis.speak(u)}
+function stopAll(){if(hasSp)speechSynthesis.cancel();if(rec){try{rec.abort()}catch(e){}rec=null}}
+const show=k=>{['start','quiz','result'].forEach(n=>$('s-'+n).hidden=n!==k);window.scrollTo(0,0)};
+function chk(){$('vw').hidden=!!jv()||!hasSp&&false}
+if(hasSp){speechSynthesis.onvoiceschanged=chk;chk()}else $('vw').hidden=false;
+$('mw').hidden=!!SR;
+$('snd').onclick=()=>{beep();say('音の確認です。この声が聞こえますか。',()=>{})};
+$('go').onclick=()=>{
+ const id=$('pid').value.replace(/[^A-Za-z0-9_\-\u3040-\u30ff\u4e00-\u9fff ]/g,'').trim().slice(0,30);
+ S={step:0,lv:2,used:[],res:[],id,date:new Date(),mic:false};actx();show('quiz');render()
+};
+
+function pickL(){
+ const un=x=>LP.filter(q=>q.d===x&&!S.used.includes(q));
+ for(const t of [S.lv,S.lv+1,S.lv-1,S.lv+2,S.lv-2]){if(t>=1&&t<=3&&un(t).length){const q=shuf(un(t))[0];S.used.push(q);return q}}
+}
+function render(){
+ stopAll();const L=S.step<4,q=L?pickL():T[S.step-4];S.cur=q;S.sel=null;S.ready=false;S.mic=false;
+ const dom=L?'L':q.dom,tot=10;
+ $('qb').innerHTML=bi(DOM[dom][0],DOM[dom][1]);$('qn').textContent=(S.step+1)+' / '+tot;$('pf').style.width=(S.step/tot*100)+'%';
+ $('qt').innerHTML=L?bi('先輩の話を聞いて、正しい行動を選んでください','Listen, then choose the correct action'):bi(...q.p);
+ $('qc').innerHTML=bi(...q.c)+(q.h?`<b>${bi(...q.h)}</b>`:'');
+ $('ap').hidden=!L;$('uc').hidden=!L;$('ut').hidden=L;$('nx').disabled=true;$('nx').firstElementChild.innerHTML=bi('回答する','Submit answer');
+ if(L){$('pl').disabled=false;$('as').textContent='';
+  const b=$('uc');b.innerHTML='';
+  shuf(q.o.map((o,k)=>({o,k}))).forEach(({o,k})=>{const x=document.createElement('button');x.type='button';x.className='opt';x.innerHTML=bi(o[0],o[1]);
+   x.onclick=()=>{if(!S.ready){$('as').textContent='先に音声を聞いてください / Play the audio first.';return}b.querySelectorAll('.opt').forEach(y=>y.classList.remove('sel'));x.classList.add('sel');S.sel=k;$('nx').disabled=false};b.appendChild(x)})
+ }else{$('ta').value='';$('ms').textContent='';$('mic').hidden=!SR;$('ta').oninput=()=>{$('nx').disabled=$('ta').value.trim().length<4}}
+}
+$('pl').onclick=()=>{
+ const q=S.cur;$('pl').disabled=true;
+ const done=()=>{S.ready=true;$('pl').disabled=true;$('as').textContent='再生終了（1回のみ） / Done. One play only.'};
+ if(!hasSp||!jv()){
+  if(q.mp3){$('as').textContent='再生中… / Playing…';const a=new Audio(q.mp3);a.onended=done;a.onerror=()=>{$('as').textContent=q.a[0];S.ready=true};a.play().catch(()=>{$('as').textContent=q.a[0];S.ready=true});return}
+  $('as').textContent=q.a[0];S.ready=true;S.textFallback=true;return}
+ $('as').textContent='再生中… / Playing…';say(q.a[0],done)
+};
+$('mic').onclick=()=>{
+ if(!SR)return;if(rec){try{rec.stop()}catch(e){}return}
+ rec=new SR();rec.lang='ja-JP';rec.interimResults=false;rec.maxAlternatives=1;
+ $('ms').textContent='🎤 聞いています… もう一度押すと止まります / Listening… press again to stop';
+ rec.onresult=e=>{const t=e.results[0][0].transcript;$('ta').value=($('ta').value+t).slice(0,400);S.mic=true;$('ta').oninput()};
+ rec.onerror=e=>{$('ms').textContent='音声入力できませんでした。文字で入力してください / Voice input failed. Please type.'};
+ rec.onend=()=>{rec=null;if($('ms').textContent.startsWith('🎤'))$('ms').textContent=''};
+ try{rec.start()}catch(e){rec=null}
+};
+
+function local(t,a){const hit=t.R.map(r=>new RegExp(r.re).test(a));return{score:Math.round(hit.filter(Boolean).length/t.R.length*3),hit}}
+async function judge(t,a){
+ try{const c=new AbortController(),to=setTimeout(()=>c.abort(),8000);
+  const r=await fetch('/api/judge',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({task:t.id,answer:a}),signal:c.signal});clearTimeout(to);
+  if(!r.ok)throw 0;const j=await r.json();
+  if(typeof j.score==='number')return{score:Math.max(0,Math.min(3,Math.round(j.score))),hit:local(t,a).hit,via:'ai',comment:String(j.comment||'').slice(0,300)}}catch(e){}
+ return{...local(t,a),via:'local'}
+}
+$('nx').onclick=async()=>{
+ const q=S.cur,L=S.step<4;beep();$('nx').disabled=true;let r;
+ if(L){const ok=S.sel===q.k;r={dom:'L',id:'L'+(S.step+1),lv:q.d,score:ok?1:0,max:1,safe:!!q.s,via:'-',inp:S.textFallback?'text':'audio',ans:q.o[S.sel][0]};S.lv=ok?Math.min(3,S.lv+1):Math.max(1,S.lv-1)}
+ else{const a=$('ta').value.trim().slice(0,400);$('nx').firstElementChild.innerHTML=bi('判定中…','Judging…');const j=await judge(q,a);
+  r={dom:q.dom,id:q.id,score:j.score,max:3,safe:!!q.s,via:j.via,inp:S.mic?'voice':'text',ans:a,hit:j.hit,comment:j.comment||''}}
+ S.res.push(r);S.step++;S.step<10?render():result()
+};
+
+const lv=p=>p>=.7?2:p>=.5?1:0;
+function fmt(d){const p=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())}
+function result(){
+ stopAll();show('result');
+ const dm=['L','S','W'].map(k=>{const a=S.res.filter(r=>r.dom===k),s=a.reduce((x,r)=>x+r.score,0),m=a.reduce((x,r)=>x+r.max,0);return{k,s,m,p:s/m,l:lv(s/m)}});
+ const flags=S.res.filter(r=>r.safe&&r.score<(r.max===1?1:2));
+ const ai=S.res.some(r=>r.via==='ai');
+ const all2=dm.every(d=>d.l===2),any0=dm.some(d=>d.l===0);
+ S.v=all2&&!flags.length?0:(!any0?1:2);S.dm=dm;S.flags=flags;S.ai=ai;
+ const V=[['N3相当・実践即応の見込み','N3-equivalent, likely ready for the floor'],['条件付き・支援しながら配置','Conditional: place with support'],['要補強・配置前に学習を','Needs reinforcement before placement']][S.v];
+ $('rv0').innerHTML=bi(...V);
+ $('rm').innerHTML=`<div>ID: ${esc(S.id||'—')} ／ ${fmt(S.date)}</div><div>${ai?bi('AI判定を使用','Judged with AI'):bi('簡易判定（ルールによる目安）','Rule-based quick judgment')}</div>`;
+ $('rb').innerHTML=dm.map(d=>`<div class="sr"><div class="sh"><div>${bi(DOM[d.k][0],DOM[d.k][1])}</div><div style="text-align:right"><span class="lv l${d.l}">${LV[d.l][0]} / ${LV[d.l][1]}</span><div class="meta">${d.s} / ${d.m}（${Math.round(d.p*100)}%）</div></div></div><div class="bar"><i style="width:${Math.round(d.p*100)}%"></i></div></div>`).join('');
+ $('rf').innerHTML=flags.length?`<div class="ad s"><h3>${bi('安全管理の要注意','Safety attention needed')}</h3>${bi('緊急・安全に関わる課題で十分な得点がありませんでした。配置前に、安全の指示と緊急連絡を優先して指導してください。','Scores were low on emergency and safety tasks. Prioritise safety instructions and emergency calls before placement.')}</div>`:'';
+ const tips=[];
+ S.res.forEach(r=>{if(r.dom==='L')return;const t=T.find(x=>x.id===r.id);(r.hit||[]).forEach((h,i)=>{if(!h&&!tips.some(x=>x[0]===t.R[i].t[0]))tips.push(t.R[i].t)})});
+ if(dm[0].l<2)tips.unshift(['指示は1回1動作で、ゆっくり、擬音語は具体的な言葉に言い換えて伝える。復唱を確認する。','Give one action at a time, slowly; replace sound-words with concrete words; check repeat-back.']);
+ if(flags.length)tips.unshift(['安全に関わる指示（床の注意・体調変化の報告）は、実際の場面で一緒に練習する。','Practise safety instructions (wet floor, reporting changes in condition) together in real situations.']);
+ const top=tips.slice(0,7);
+ $('ri').innerHTML=top.length?`<ol>${top.map(t=>`<li>${bi(...t)}</li>`).join('')}</ol>`:`<div class="ad">${bi('大きな課題は見つかりませんでした。通常の指導で配置できます。次は申し送りや緊急時対応の練習をします。','No major gaps found. Normal supervision is enough. Next, practise handovers and emergency response.')}</div>`;
+ $('rd').innerHTML=S.res.map(r=>{const t=T.find(x=>x.id===r.id),miss=t&&r.hit?t.R.filter((_,i)=>!r.hit[i]).map(x=>x.l[0]+' / '+x.l[1]).join('、'):'';
+  return`<div class="rv"><b>${r.id}</b> ${DOM[r.dom][0]} ${r.score}/${r.max}${r.via==='ai'?' (AI)':''}<br>${esc(r.ans)}${miss?`<br><span class="en">不足 / Missing: ${esc(miss)}</span>`:''}${r.comment?`<br><span class="en">${esc(r.comment)}</span>`:''}</div>`}).join('')
+}
+
+function cell(v){v=String(v==null?'':v);if(/^[=+\-@\t\r]/.test(v))v="'"+v;return'"'+v.replace(/"/g,'""')+'"'}
+function dl(n,m,t){const u=URL.createObjectURL(new Blob([t],{type:m})),a=document.createElement('a');a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+const fname=e=>'n3-check_'+fmt(S.date).slice(0,10).replace(/-/g,'')+(S.id?'_'+S.id.replace(/ /g,'_'):'')+'.'+e;
+const VK=['ready','conditional','reinforce'];
+const payload=()=>({version:1,id:S.id,date:S.date.toISOString(),verdict:VK[S.v],judging:S.ai?'ai':'local',
+ domains:S.dm.map(d=>({domain:d.k,score:d.s,max:d.m,level:LV[d.l][1]})),safetyFlags:S.flags.map(r=>r.id),
+ tasks:S.res.map(r=>({id:r.id,domain:r.dom,score:r.score,max:r.max,via:r.via,input:r.inp,answer:r.ans}))});
+$('xj').onclick=()=>dl(fname('json'),'application/json',JSON.stringify(payload(),null,2));
+$('xc').onclick=()=>{const p=payload(),R=[['項目 / Field','値 / Value'],['ID',p.id],['日時 / Date',fmt(S.date)],['判定 / Verdict',p.verdict],['判定方法 / Judging',p.judging],['安全フラグ / Safety flags',p.safetyFlags.join(' ')],[],['領域 / Domain','得点 / Score','満点 / Max','レベル / Level']];
+ p.domains.forEach(d=>R.push([d.domain,d.score,d.max,d.level]));R.push([],['課題 / Task','領域 / Domain','得点 / Score','満点 / Max','判定 / Via','入力 / Input','回答 / Answer']);
+ p.tasks.forEach(t=>R.push([t.id,t.domain,t.score,t.max,t.via,t.input,t.answer]));
+ dl(fname('csv'),'text/csv;charset=utf-8','\ufeff'+R.map(r=>r.map(cell).join(',')).join('\r\n'))};
+$('xp').onclick=()=>window.print();
+$('xr').onclick=()=>location.reload();
+$('xs').onclick=async()=>{
+ $('xm').textContent='送信中… / Sending…';
+ try{const c=new AbortController(),to=setTimeout(()=>c.abort(),8000);const r=await fetch('/api/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload()),signal:c.signal});clearTimeout(to);
+  $('xm').textContent=r.ok?'送信しました / Sent.':'送信できませんでした。JSON か CSV を管理者に渡してください / Could not send. Give the JSON or CSV to your administrator.'}
+ catch(e){$('xm').textContent='送信できませんでした。JSON か CSV を管理者に渡してください / Could not send. Give the JSON or CSV to your administrator.'}
+};
+if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>

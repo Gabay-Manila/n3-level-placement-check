@@ -15,7 +15,7 @@ We use two tests to check the Japanese and on-the-job skills of Specified Skille
 | 目的 / Purpose | 試験に合格しても現場で指示を実行できない原因を探る / Find why a worker who passed the exam cannot carry out instructions | 入国時に、介護の場面でN3相当の会話ができるかを判定する / Judge whether the worker can use N3-level Japanese in care situations |
 | 内容 / Content | 連続指示、条件、割り込み後の記憶（全20問）/ Sequences, conditions, memory after interruption (20 items) | 聞く・話す・書く（全10課題）/ Listening, speaking, writing (10 tasks) |
 | 所要時間 / Time | 約15分 / About 15 min | 約15分 / About 15 min |
-| アドレス / Address | https://shiji-rikai-test.vercel.app/ | 公開準備中 / Coming soon |
+| アドレス / Address | https://shiji-rikai-test.vercel.app/ | (https://n3-level-placement-check.vercel.app/) |
 
 **どちらも診断ではなく目安です。採用・評価・解雇の判断には使わないでください。**
 
